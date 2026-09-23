@@ -1,0 +1,11 @@
+heights = [10, 20, 35, 50, 45, 30, 15]
+def Peak_Element(heights, low, high):
+    for i in range(len(heights)-1):
+        mid = (low + high) // 2
+        if heights[mid] > heights[mid + 1]:
+            high = mid - 1
+        else:
+            low = mid + 1
+    
+    return low       
+print(Peak_Element(heights, 0, len(heights)-1))
