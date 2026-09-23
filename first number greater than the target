@@ -1,0 +1,18 @@
+temperatures = [10, 15, 20, 25, 30, 35, 40, 45]
+target = 28
+def first_number(temperature, low, high):
+    for i in range(len(temperatures) -1):
+        mid = (low + high) // 2
+        if temperatures[mid] == target:
+            return mid
+        elif temperatures[mid] <= target:
+            low = mid + 1
+        else:
+            answer = temperature[mid]
+            high = mid - 1
+    return answer
+            
+        
+
+print(first_number(temperatures, 0, len(temperatures)-1))
+        
