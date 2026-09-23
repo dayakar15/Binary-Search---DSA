@@ -1,0 +1,20 @@
+numbers = [5, 10, 15, 20, 25, 30, 35, 40]
+target = 22
+def floor_number(numbers, low, high):
+    answer = -1
+    for i in range(len(numbers) -1):
+        mid = (low + high) // 2
+        if numbers[mid] == target:
+            return numbers[mid]
+        elif numbers[mid] < target:
+            
+            low = mid + 1
+        else:
+            answer = numbers[mid]
+            high = mid - 1
+    return answer
+            
+        
+
+print(floor_number(numbers, 0, len(numbers)-1))
+        
