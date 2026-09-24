@@ -1,0 +1,11 @@
+numbers = [40, 50, 60, 70, 10, 20, 30]
+def Rotation_Count(numbers, low, high):
+    for i in range(len(numbers) - 1):
+        mid = (low + high) // 2
+        if numbers[mid] > numbers[high]:
+            low = mid + 1
+        else:
+            high = mid
+    return low
+            
+print(Rotation_Count(numbers, 0, len(numbers)-1))
