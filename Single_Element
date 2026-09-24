@@ -1,0 +1,17 @@
+numbers = [1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6]
+
+def Single_Element(numbers, low, high):
+    for i in range(len(numbers) - 1):
+        mid = (low + high) // 2
+        if mid % 2 == 1:
+            mid = mid - 1
+        if numbers[mid] == numbers[mid + 1]:
+            low = mid + 2
+        else:
+            high = mid
+            
+    return numbers[low]
+            
+            
+print(Single_Element(numbers, 0, len(numbers) -1))
+            
