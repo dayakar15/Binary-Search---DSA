@@ -1,0 +1,10 @@
+numbers = [10, 20, 35, 50, 65, 55, 40, 25, 10]
+def Biotonic_array(numbers, low, high):
+    for i in range(len(numbers)):
+        mid = (low + high) // 2
+        if numbers[mid] < numbers[mid + 1]:
+            low = mid + 1
+        else:
+            high = mid
+    return numbers[low]
+print(Biotonic_array(numbers, 0, len(numbers)))
