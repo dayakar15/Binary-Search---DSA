@@ -1,0 +1,24 @@
+matrix = [
+    [10, 20, 30, 40],
+    [50, 60, 70, 80],
+    [90, 100, 110, 120],
+    [130, 140, 150, 160]
+]
+
+target = 110
+
+def single_dimensional(matrix, low, high):
+    for i in range(len(matrix)):
+        mid = (low + high) // 2
+        row = mid // 4
+        column = mid % 4
+        if matrix[row][column] == target:
+            return row, column
+        elif matrix[row][column] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+print(single_dimensional(matrix, 0, 15))
+            
